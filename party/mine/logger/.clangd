@@ -1,0 +1,11 @@
+# 读项目根目录的 compile_commands.json（由 ./make.sh 合并生成）。
+CompileFlags:
+  CompilationDatabase: .
+  Remove:
+    - -forward-unknown-to-host-compiler
+    - --generate-code=*
+    - -Xcompiler=*
+
+Diagnostics:
+  Suppress:
+    - drv_unknown_argument

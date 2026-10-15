@@ -5,10 +5,17 @@
 ## 构建
 
 ```bash
-cmake -S . -B build
-cmake --build build -j
+./make.sh
 ctest --test-dir build --output-on-failure
 ```
+
+`./make.sh` 同时会：
+
+- 找到本机、`CMAKE_PREFIX_PATH`、`--prefix` 和 `third_party/` 里的库
+- 编译根目录的纯 CMake 工程；以后放进子目录的 ROS 2 包也会一起编
+- 把所有 `compile_commands.json` 合并到项目根目录，给 clangd 用
+
+改完后在编辑器里执行 `clangd: Restart language server`。
 
 ## 使用
 
