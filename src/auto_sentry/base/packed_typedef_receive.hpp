@@ -2,6 +2,7 @@
 #include <cstdint>
 
 #include <atomic>
+#include <cstring>
 #include <optional>
 #include  <vector>
 
@@ -27,8 +28,15 @@ namespace aurora::data::receive {
             float operator_pitch_offset ;
 
             static std::optional<ReceiveRobotData> create (const std::vector<uint8_t> data) {
-                if (data.size())
+                if (data.size() != sizeof(ReceiveRobotData) || data[0] != ID) 
+                return std::nullopt;
+
+            ReceiveRobotData out ;
+            std::memcpy(&out, data.data() , sizeof(out)) ;
+            return out;
+
+            //基本的发送消息的接口用来和下位机通讯
             } 
-        };
+        } data_receive 
 
 } //namespace aurora::data::receive
