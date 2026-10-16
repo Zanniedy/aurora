@@ -9,13 +9,24 @@
 ctest --test-dir build --output-on-failure
 ```
 
-`./make.sh` 同时会：
+`./make.sh` 会把静态库装到 `install/`。同一次构建里的 ROS 2 包可以直接 `find_package(aurora_logger)`。
 
-- 找到本机、`CMAKE_PREFIX_PATH`、`--prefix` 和 `third_party/` 里的库
-- 编译根目录的纯 CMake 工程；以后放进子目录的 ROS 2 包也会一起编
-- 把所有 `compile_commands.json` 合并到项目根目录，给 clangd 用
+## 同一个 CMake 工程
 
-改完后在编辑器里执行 `clangd: Restart language server`。
+```cmake
+target_link_libraries(your_target PRIVATE aurora::aurora_logger)
+```
+
+## 别的 CMake / ROS 2 工程
+
+```cmake
+find_package(aurora_logger REQUIRED)
+target_link_libraries(your_target PRIVATE aurora::aurora_logger)
+```
+
+```bash
+cmake -S . -B build -DCMAKE_PREFIX_PATH=/path/to/logger/install
+```
 
 ## 使用
 

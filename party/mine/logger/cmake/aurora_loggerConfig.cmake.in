@@ -1,0 +1,13 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+find_dependency(spdlog 1.15)
+
+include("${CMAKE_CURRENT_LIST_DIR}/aurora_loggerTargets.cmake")
+
+if(NOT TARGET aurora_logger)
+    add_library(aurora_logger INTERFACE IMPORTED)
+    target_link_libraries(aurora_logger INTERFACE aurora::aurora_logger)
+endif()
+
+check_required_components(aurora_logger)

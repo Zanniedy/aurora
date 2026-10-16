@@ -97,8 +97,8 @@ prepare_env() {
         fi
     fi
 
-    local prefix="${ROOT}/install/deps"
-    local joined="${prefix}"
+    # install/ 放本库，install/deps 放 third_party。后面的包靠这个前缀 find_package。
+    local joined="${ROOT}/install:${ROOT}/install/deps"
     local extra
     for extra in "${PREFIXES[@]}"; do
         joined="${extra}:${joined}"
@@ -164,6 +164,8 @@ build_cmake_project() {
     cmake_cmd+=("${CMAKE_ARGS[@]}")
     "${cmake_cmd[@]}"
     cmake --build "${build_dir}" --parallel "${JOBS}"
+    echo "[install] ${build_dir} -> ${ROOT}/install"
+    cmake --install "${build_dir}" --prefix "${ROOT}/install"
 }
 
 build_ros_packages() {
