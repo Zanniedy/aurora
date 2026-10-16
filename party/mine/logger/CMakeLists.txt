@@ -30,6 +30,7 @@ if(NOT TARGET spdlog::spdlog)
 
     set(_AURORA_SPDLOG_BUILD "${CMAKE_BINARY_DIR}/spdlog-external")
     set(_AURORA_SPDLOG_PREFIX "${CMAKE_BINARY_DIR}/spdlog-prefix")
+    # execute_process 里多个 COMMAND 是管道，不是先后执行。
     execute_process(
         COMMAND "${CMAKE_COMMAND}" -S "${spdlog_SOURCE_DIR}" -B "${_AURORA_SPDLOG_BUILD}"
             -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
@@ -40,7 +41,13 @@ if(NOT TARGET spdlog::spdlog)
             -DSPDLOG_BUILD_EXAMPLE=OFF
             -DSPDLOG_BUILD_TESTS=OFF
             -DSPDLOG_BUILD_BENCH=OFF
+        COMMAND_ERROR_IS_FATAL ANY
+    )
+    execute_process(
         COMMAND "${CMAKE_COMMAND}" --build "${_AURORA_SPDLOG_BUILD}" --parallel
+        COMMAND_ERROR_IS_FATAL ANY
+    )
+    execute_process(
         COMMAND "${CMAKE_COMMAND}" --install "${_AURORA_SPDLOG_BUILD}"
         COMMAND_ERROR_IS_FATAL ANY
     )

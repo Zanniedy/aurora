@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "/home/lsy/cs_project/aurora/party/mine/logger"
+    "cmake.sourceDirectory": "/home/lsy/cs_project/aurora",
+    "cmake.buildDirectory": "${workspaceFolder}/build"
 }
