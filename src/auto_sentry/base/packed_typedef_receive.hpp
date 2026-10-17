@@ -39,4 +39,6 @@ namespace aurora::data::receive {
             } 
         } data_receive 
 
+        struct SentryRefereeReceive{}
+
 } //namespace aurora::data::receive
