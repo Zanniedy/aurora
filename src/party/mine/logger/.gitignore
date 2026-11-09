@@ -1,6 +1,0 @@
-/build/
-/log/
-.cache/
-cmake-build-*/
-/install/
-compile_commands.json

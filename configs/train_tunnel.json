@@ -1,0 +1,24 @@
+{
+  "dataset": "datasets/tunnel_v1",
+  "run": "runs/aurora_tunnel_v1",
+  "seed": 20261109,
+  "epochs": 80,
+  "batch_size": 8,
+  "workers": 2,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "gradient_clip": 5.0,
+  "amp": true,
+  "voxel": {
+    "range": [-5.0, -5.0, -0.8, 5.0, 5.0, 1.0],
+    "size": [0.05, 0.05, 0.05],
+    "output_stride": 2
+  },
+  "model": {"width": 32},
+  "augmentation": {"yaw_rotation": true, "point_dropout": 0.10, "noise_std_m": 0.003},
+  "target_radius_cells": 2,
+  "position_loss_weight": 2.0,
+  "score_threshold": 0.25,
+  "match_distance_m": 0.2,
+  "top_k": 20
+}

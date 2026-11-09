@@ -1,0 +1,129 @@
+{
+  "source_stl": "/home/lsy/Downloads/rmul_2027.stl",
+  "source_sha256": "aba82019962f672f819cb90c7be33face70faa4cfbf9ec33b44440e84dc68ce9",
+  "source_manual": "/home/lsy/file/RoboMaster 2027 机甲大师高校联盟赛比赛规则手册 V1.0.0（20261015）.pdf",
+  "triangle_count": 3811,
+  "source_bounds_mm": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      12600.0,
+      520.0,
+      8600.0
+    ]
+  ],
+  "source_up_axis": "-Y",
+  "source_ground_height_mm": 420.0,
+  "transform": "X = (source_x - 6300) / 1000; Y = (source_z - 4300) / 1000; Z = (420 - source_y) / 1000",
+  "geometry_modified": false,
+  "all_checked_dimensions_match": true,
+  "checks": [
+    {
+      "dimension": "field_clear_length",
+      "manual_mm": 12000.0,
+      "stl_mm": 12000.0,
+      "difference_mm": 0.0,
+      "status": "match",
+      "manual_reference": "印刷页24 / 图3-5"
+    },
+    {
+      "dimension": "field_clear_width",
+      "manual_mm": 8000.0,
+      "stl_mm": 8000.0,
+      "difference_mm": 0.0,
+      "status": "match",
+      "manual_reference": "印刷页24 / 图3-5"
+    },
+    {
+      "dimension": "highland_width",
+      "manual_mm": 2000.0,
+      "stl_mm": 2000.0,
+      "difference_mm": 0.0,
+      "status": "match",
+      "manual_reference": "印刷页25 / 图3-8"
+    },
+    {
+      "dimension": "highland_length",
+      "manual_mm": 4060.0,
+      "stl_mm": 4060.0,
+      "difference_mm": 0.0,
+      "status": "match",
+      "manual_reference": "印刷页25 / 图3-8"
+    },
+    {
+      "dimension": "highland_height",
+      "manual_mm": 200.0,
+      "stl_mm": 200.0,
+      "difference_mm": 0.0,
+      "status": "match",
+      "manual_reference": "印刷页25 / 图3-8"
+    },
+    {
+      "dimension": "barrier_height",
+      "manual_mm": 400.0,
+      "stl_mm": 400.0,
+      "difference_mm": 0.0,
+      "status": "match",
+      "manual_reference": "印刷页25 / 图3-8"
+    },
+    {
+      "dimension": "barrier_width",
+      "manual_mm": 150.0,
+      "stl_mm": 150.0,
+      "difference_mm": 0.0,
+      "status": "match",
+      "manual_reference": "印刷页25 / 图3-8"
+    },
+    {
+      "dimension": "barrier_length",
+      "manual_mm": 1800.0,
+      "stl_mm": 1800.0,
+      "difference_mm": 0.0,
+      "status": "match",
+      "manual_reference": "印刷页25 / 图3-8"
+    },
+    {
+      "dimension": "tunnel_clear_width",
+      "manual_mm": 800.0,
+      "stl_mm": 800.0,
+      "difference_mm": 0.0,
+      "status": "match",
+      "manual_reference": "印刷页25 / 图3-8"
+    },
+    {
+      "dimension": "tunnel_clear_height",
+      "manual_mm": 250.0,
+      "stl_mm": 250.0,
+      "difference_mm": 0.0,
+      "status": "match",
+      "manual_reference": "印刷页25 / 图3-8"
+    },
+    {
+      "dimension": "bridge_top_height",
+      "manual_mm": 270.0,
+      "stl_mm": 270.0,
+      "difference_mm": 0.0,
+      "status": "match",
+      "manual_reference": "印刷页25 / 图3-8"
+    },
+    {
+      "dimension": "bridge_width",
+      "manual_mm": 350.0,
+      "stl_mm": 350.0,
+      "difference_mm": 0.0,
+      "status": "match",
+      "manual_reference": "印刷页25 / 图3-8"
+    }
+  ],
+  "limitations": [
+    "仅核对表内尺寸，不等于对每个 STL 细节的完整工程验收。",
+    "场内尺寸由已有边界平面核对；局部尺寸由图纸对应区域的三角面和水平面测量。",
+    "通过面法线和整场底板确定源坐标向上为-Y；地面Y=420，底板下表面Y=520。",
+    "两侧金属板底面Y=170、顶面Y=150，相对地面的净高250mm、顶面高度270mm。",
+    "手册印刷页21规定了制造误差，并说明未注明尺寸以实际场地为准。",
+    "STL不携带可靠的地形语义标签；当前材质分区仅用于显示，不是训练标注。"
+  ]
+}

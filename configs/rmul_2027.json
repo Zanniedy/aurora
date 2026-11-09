@@ -1,0 +1,29 @@
+{
+  "description": "用户提供的 RMUL 2027 STL 原样导入；只做毫米到米与坐标系转换，不修改几何。已核对场内、高地和隧道关键尺寸，详见尺寸审计。",
+  "source_stl": "/home/lsy/Downloads/rmul_2027.stl",
+  "source_manual": "/home/lsy/file/RoboMaster 2027 机甲大师高校联盟赛比赛规则手册 V1.0.0（20261015）.pdf",
+  "planned_task": {
+    "classes": ["tunnel"],
+    "input": "single_frame_pointcloud",
+    "output": ["label", "position", "score"],
+    "sensor": "Livox MID-360",
+    "other_terrain": "background_only"
+  },
+  "meters_per_source_unit": 0.001,
+  "source_origin": [6300.0, 420.0, 4300.0],
+  "coordinate_transform": "X = (source_x - 6300) / 1000; Y = (source_z - 4300) / 1000; Z = (420 - source_y) / 1000",
+  "manual_dimensions_mm": {
+    "field_clear_length": 12000.0,
+    "field_clear_width": 8000.0,
+    "highland_width": 2000.0,
+    "highland_length": 4060.0,
+    "highland_height": 200.0,
+    "barrier_height": 400.0,
+    "barrier_width": 150.0,
+    "barrier_length": 1800.0,
+    "tunnel_clear_width": 800.0,
+    "tunnel_clear_height": 250.0,
+    "bridge_top_height": 270.0,
+    "bridge_width": 350.0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "scene": "scenes/aurora_terrain.usda",
+  "output": "datasets/tunnel_v1",
+  "seed": 20261109,
+  "sequences": 96,
+  "frames_per_sequence": 16,
+  "negative_sequence_fraction": 0.25,
+  "split_fractions": [0.75, 0.125, 0.125],
+  "sensor": {
+    "name": "MID360_FOV_approximation",
+    "backend": "warp_triangle_raycast",
+    "scan_pattern": "independent_uniform_azimuth_elevation_NOT_Livox_pattern",
+    "frame_duration_s": 0.1,
+    "rays_per_frame": 20000,
+    "elevation_deg": [-7.0, 52.0],
+    "range_m": [0.1, 12.0],
+    "range_noise_std_m": [0.003, 0.015],
+    "dropout_fraction": [0.01, 0.08],
+    "motion_distortion": false,
+    "reflectivity_simulated": false
+  },
+  "sampling": {
+    "height_m": [0.15, 0.30],
+    "distance_m": [0.8, 4.0],
+    "pitch_deg": [-6.0, 6.0],
+    "roll_deg": [-3.0, 3.0],
+    "max_attempts_per_frame": 300
+  },
+  "annotation": {
+    "position_reference": "entrance_bottom_center",
+    "max_distance_m": 4.5,
+    "min_visible_probe_fraction": 0.44,
+    "min_support_points": 8,
+    "minimum_facing_cosine": 0.3
+  },
+  "portals": [
+    {"instance_id": "tunnel_red", "entrance_id": "west", "position_world": [-2.675, 3.46, 0.0], "outward_world": [-1.0, 0.0, 0.0]},
+    {"instance_id": "tunnel_red", "entrance_id": "east", "position_world": [-2.325, 3.46, 0.0], "outward_world": [1.0, 0.0, 0.0]},
+    {"instance_id": "tunnel_blue", "entrance_id": "west", "position_world": [2.325, -3.46, 0.0], "outward_world": [-1.0, 0.0, 0.0]},
+    {"instance_id": "tunnel_blue", "entrance_id": "east", "position_world": [2.675, -3.46, 0.0], "outward_world": [1.0, 0.0, 0.0]}
+  ]
+}
